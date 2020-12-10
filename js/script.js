@@ -3,6 +3,7 @@ const iframeOne = document.querySelector('#video1');
 const iframeTwo = document.querySelector('#video2');
 const switchControl = document.querySelector('#switchControl');
 const title = document.querySelector('#title');
+const body = document.querySelector('body');
 var playerOne = new Vimeo.Player(iframeOne);
 var playerTwo = new Vimeo.Player(iframeTwo);
 
@@ -28,6 +29,7 @@ switchControl.addEventListener("click", () =>
         iframeTwo.style.display = "block";
         playVideoOne = false;
         playVideoTwo = true;
+        body.style.cursor = "url('assets/images/star2.png'), auto";
     }
 
     else if (playVideoTwo === true)
@@ -36,6 +38,8 @@ switchControl.addEventListener("click", () =>
         iframeTwo.style.display = "none";
         playVideoOne = true;
         playVideoTwo = false;
+        body.style.cursor = "url('assets/images/drum2.png'), auto";
+
     }
 });
 
@@ -45,7 +49,7 @@ vdo_play = setInterval(function ()
     playerOne.on('timeupdate', function (getAll)
     {
         currentPos = getAll.seconds; //get currentime
-       console.log('currentPos: ' + currentPos);
+        //console.log('currentPos: ' + currentPos);
     });
 
     if (currentPos > 104)
@@ -57,7 +61,7 @@ vdo_play = setInterval(function ()
         switchControl.style.display = "none";
         title.style.display = "block";
 
-        console.log('switched');
+        //console.log('switched');
     }
 
 }, 1000);
