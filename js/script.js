@@ -19,6 +19,7 @@ beginBtn.addEventListener('click', () => {
     playerTwo.play();
     playerOne.setVolume(1);
     playerTwo.setVolume(0);
+    body.style.cursor = "url('assets/images/drum2.png'), auto";
 });
 
 switchControl.addEventListener("click", () => 

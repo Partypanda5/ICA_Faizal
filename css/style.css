@@ -2,7 +2,6 @@ body
 {
     background-color: black;
     overflow: hidden; 
-    cursor: url('../assets/images/drum2.png'), auto;   
 }
 
 #overlay {
