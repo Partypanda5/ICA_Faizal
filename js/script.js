@@ -49,20 +49,32 @@ vdo_play = setInterval(function ()
 {
     playerOne.on('timeupdate', function (getAll)
     {
-        currentPos = getAll.seconds; //get currentime
-        //console.log('currentPos: ' + currentPos);
+        currentPos = getAll.seconds;
     });
 
-    if (currentPos > 104)
+    if (currentPos > 104 && currentPos < 110)
     {
         iframeOne.style.display = "none";
         iframeTwo.style.display = "block";
         playVideoOne = false;
         playVideoTwo = true;
         switchControl.style.display = "none";
-        title.style.display = "block";
+        title.style.opacity = "1";
 
-        //console.log('switched');
+        setTimeout(function()
+        { 
+            title.style.opacity = "0";
+        }, 30000);
+    }
+
+    else if (currentPos > 180)
+    {
+        title.style.opacity = "1";
+
+        setTimeout(function()
+        { 
+            title.style.opacity = "0";
+        }, 30000);
     }
 
 }, 1000);
